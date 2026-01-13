@@ -1,3 +1,4 @@
+<!-- index.html (modified) -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,10 +6,12 @@
   <title>2048</title>
 
   <link href="style/main.css" rel="stylesheet" type="text/css">
+  <!-- Theme override (added) -->
+  <link href="style/theme.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
@@ -20,10 +23,17 @@
   <div class="container">
     <div class="heading">
       <h1 class="title">2048</h1>
+
       <div class="scores-container">
         <div class="score-container">0</div>
         <div class="best-container">0</div>
       </div>
+
+      <!-- Player name input added -->
+      <div class="player-input">
+        <input id="playerName" placeholder="Name" aria-label="Player name" />
+      </div>
+
     </div>
 
     <div class="above-game">
@@ -35,43 +45,23 @@
       <div class="game-message">
         <p></p>
         <div class="lower">
-	        <a class="keep-playing-button">Keep going</a>
+          <a class="keep-playing-button">Keep going</a>
           <a class="retry-button">Try again</a>
         </div>
       </div>
 
       <div class="grid-container">
         <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
+          <!-- grid cells -->
         </div>
       </div>
+    </div>
 
-      <div class="tile-container">
-
-      </div>
   </div>
 
+  <!-- Config that will contain WEB_APP_URL (new file) -->
+  <script src="js/config.js"></script>
+  <!-- existing scripts -->
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
   <script src="js/animframe_polyfill.js"></script>
@@ -80,7 +70,7 @@
   <script src="js/grid.js"></script>
   <script src="js/tile.js"></script>
   <script src="js/local_storage_manager.js"></script>
+  <script src="js/score_submission_hook.js"></script> <!-- optional small hook, not required -->
   <script src="js/game_manager.js"></script>
-  <script src="js/application.js"></script>
 </body>
 </html>
