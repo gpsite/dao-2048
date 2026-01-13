@@ -1,0 +1,67 @@
+/* style/theme.css (new) — blue/gray/black theme overrides */
+
+:root{
+  --bg-1: #070a0e;
+  --bg-2: #0d1218;
+  --panel: #0f1724;
+  --muted: #9fb0bf;
+  --accent: #6aa0c6;
+  --tile-dark: #0f1724;
+  --tile-2: #1a2a36;
+  --tile-4: #203543;
+  --tile-8: #274754;
+  --tile-16: #2e5965;
+  --tile-32: #35727f;
+  --tile-64: #3da0ac;
+  --tile-high: #4f9fa8;
+  --text: #e6eef6;
+}
+
+html, body {
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-2)) !important;
+  color: var(--text) !important;
+}
+
+.container {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6) !important;
+}
+
+.score-container, .best-container {
+  background: var(--panel) !important;
+  color: var(--text) !important;
+}
+
+.player-input { display:inline-block; margin-left:12px; vertical-align:middle; }
+.player-input input#playerName {
+  padding:6px 10px;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+}
+
+.grid-cell {
+  background: rgba(255,255,255,0.02) !important;
+  border-radius: 6px !important;
+}
+
+.tile .tile-inner {
+  color: var(--text) !important;
+  background: var(--tile-dark) !important;
+  box-shadow: none !important;
+}
+
+.tile.tile-2 .tile-inner { background: var(--tile-2) !important; }
+.tile.tile-4 .tile-inner { background: var(--tile-4) !important; }
+.tile.tile-8 .tile-inner { background: var(--tile-8) !important; }
+.tile.tile-16 .tile-inner { background: var(--tile-16) !important; }
+.tile.tile-32 .tile-inner { background: var(--tile-32) !important; }
+.tile.tile-64 .tile-inner { background: var(--tile-64) !important; }
+.tile.tile-128 .tile-inner,
+.tile.tile-256 .tile-inner,
+.tile.tile-512 .tile-inner,
+.tile.tile-1024 .tile-inner,
+.tile.tile-2048 .tile-inner { background: var(--tile-high) !important; color: #04121a !important; }
+
+.game-message { background: rgba(0,0,0,0.35) !important; color: var(--text) !important; }
